@@ -22,12 +22,36 @@ public class SysConfig {
      * @param context
      * @return
      */
-    private final static SysConfig getSysConfig(Context context){
+    public final static SysConfig getSysConfig(Context context){
         if(sysConfig == null){
             sysConfig = new SysConfig(context);
         }
         return sysConfig;
     }
 
+    /***
+     * 设置自定义配置信息
+     * @param custom_action
+     * @param info  配置内容
+     * @return
+     */
+    public void setCustomConfig(String custom_action,String info){
+        config.edit().putString(custom_action, info).commit();
+    }
+    /***
+     * 获取自定义配置信息
+     * @return
+     */
+    public String getCustomConfig(String custom_action,String defaultStr){
+        return config.getString(custom_action, defaultStr);
+    }
+
+    /***
+     * 写入屏幕的宽度
+     * @return
+     */
+    public void setScreenWidth(int windth){
+        config.edit().putInt("screenWidth", windth).commit();
+    }
 
 }

@@ -1,13 +1,14 @@
 package com.cy.classinteraction;
 
+import android.content.Intent;
+import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.DisplayMetrics;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.widget.Toast;
 
+import com.cy.classinteraction.util.SysConfig;
+
+import java.util.Timer;
 import java.util.TimerTask;
 
 /**
@@ -21,10 +22,16 @@ public class MainActivity extends AppCompatActivity {
 
 
     private ViewPager vp_main;
+    private SysConfig sysConfig;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        sysConfig = SysConfig.getSysConfig(this);
+
+        //开始定时器（可以设置在多久后执行下一步操作）
+        Timer timer = new Timer();
+        timer.schedule(new Task(),3000);
     }
 
     /**
@@ -36,8 +43,9 @@ public class MainActivity extends AppCompatActivity {
         public void run() {
             DisplayMetrics metric = new DisplayMetrics();
             getWindowManager().getDefaultDisplay().getMetrics(metric);
-
-
+            //写入屏幕宽度
+            sysConfig.setScreenWidth(metric.widthPixels);
+            startActivity(new Intent(MainActivity.this,ActivityWelcome.class));
         }
     }
 }

@@ -3,4 +3,7 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+
+    <!--start-->
+    <string name="test_launch">Luanch画面</string>
 </resources>
