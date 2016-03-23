@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="bg_gray">#ebebeb</color>
+    <!-- 灰色背景 -->
+
+    <color name="white">#FFFFFF</color>
+    <!-- 纯白 -->
+
+    <color name="font_black">#666666</color>
+    <!-- 字体黑色 -->
+    
+     <color name="holo_blue">#FF33E5B5</color>
+     
+     <!-- 头部红色 -->
+     <color name="head_red">#FF3030</color>
+     
+
+</resources>

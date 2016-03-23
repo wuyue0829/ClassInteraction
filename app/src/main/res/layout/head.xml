@@ -1,0 +1,20 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/head_bar"
+    android:layout_width="match_parent"
+    android:layout_height="45dp"
+    android:background="#1ABC9B" >
+
+    <!-- 头部布局 -->
+
+    <TextView
+        android:id="@+id/tv_head_title"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/head_title"
+        android:textSize="18sp"
+        android:textColor="#000000" />
+
+</RelativeLayout>
